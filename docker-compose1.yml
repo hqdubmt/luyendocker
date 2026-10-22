@@ -1,0 +1,13 @@
+services:
+  node_app:
+    container_name: node_docker_dev
+    image: hqdu/dockertest:latest
+    restart: always
+
+    env_file:
+      - .env  
+
+    ports:
+      - "${port}:3000"
+
+    

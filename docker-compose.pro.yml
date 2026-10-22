@@ -1,0 +1,27 @@
+services:
+  node_docker_pro:
+    container_name: node_docker_pro
+    restart: always
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+ 
+
+    environment:
+      port: 7579
+
+    ports:
+      - "7579:3000"
+
+    env_file:
+      - .env
+
+    command: npm start
+
+    networks:
+      - node-docker_pro
+
+networks:
+  node-docker_pro:
+    driver: bridge
